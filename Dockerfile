@@ -27,8 +27,9 @@ ENV SHELL=/bin/bash
 
 USER codeserver
 
-# PDF Extension
-RUN code-server --install-extension tomoki1207.pdf
+# Office Viewer Extension
+COPY cweijan.vscode-office-2.0.3.vsix /home/codeserver/cweijan.vscode-office-2.0.3.vsix
+RUN code-server --install-extension /home/codeserver/cweijan.vscode-office-2.0.3.vsix
 
 # Formatter Extension
 RUN code-server --install-extension esbenp.prettier-vscode
